@@ -1,0 +1,80 @@
+import java.util.ArrayList;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student student = new Student("Md.Tajul Islam", "14151103057");
+		Student student2 = new Student("Md.Rafiqul Islam", "14151103080");
+		ArrayList<Student>students = new ArrayList<>();
+		
+		students.add(student);
+		students.add(student2);
+		Club club = new Club("IT CLUB", students);
+		for(Student singleStudent :club.getStudents())
+		{
+			System.out.println(singleStudent.getStudentName()+" "+singleStudent.getStudentId());
+		}
+		
+
+	}
+
+}
+
+
+
+public class Student {
+	private String studentName;
+	private String studentId;
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public String getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+	public Student(String studentName, String studentId) {
+		super();
+		this.studentName = studentName;
+		this.studentId = studentId;
+	}
+
+}
+
+import java.util.ArrayList;
+
+public class Club {
+	private String clubName;
+	//private Student student;
+	private ArrayList<Student>students;
+	public void setStudents(ArrayList<Student>students)
+	{
+		this.students=students;
+		
+	}
+	public ArrayList<Student> getStudents(){
+		return students;
+		
+	}
+	public String getClubName() {
+		return clubName;
+	}
+	public void setClubName(String clubName) {
+		this.clubName = clubName;
+	}
+	
+	
+	public Club(String clubName, ArrayList<Student> students) {
+		super();
+		this.clubName = clubName;
+		
+		this.students = students;
+	}
+
+}
+
