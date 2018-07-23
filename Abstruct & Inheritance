@@ -1,0 +1,70 @@
+
+public class MainClass {
+	public static void main(String[] args) {
+		Parrot parrot = new Parrot("Parrot Bird", "Flying", "Black", "100g");
+
+		System.out.println(parrot.getInfoDetails() + ", " + parrot.getInfo());
+	}
+}
+
+
+
+public interface Info {
+public String getInfoDetails();
+}
+
+
+
+public abstract class Bird {
+	private String vType;
+	private String vColor;
+	private String vWeight;
+
+	public Bird(String vType, String vColor, String vWeight) {
+		super();
+		this.vType = vType;
+		this.vColor = vColor;
+		this.vWeight = vWeight;
+	}
+
+	public String getvType() {
+		return vType;
+	}
+
+	public String getvColor() {
+		return vColor;
+	}
+
+	public String getvWeight() {
+		return vWeight;
+	}
+
+	public String getInfo() {
+		return "Type - " + vType + ", Color - " + vColor + ", Weight - " + vWeight;
+	}
+}
+
+
+
+public class Parrot extends Bird implements Info{
+	private String vName;
+
+	public Parrot(String vName, String vType, String vColor, String vWeight) {
+		super(vType, vColor, vWeight);
+		this.vName = vName;
+	}
+
+	public String getvName() {
+		return vName;
+	}
+
+	public void setvName(String vName) {
+		this.vName = vName;
+	}
+
+	@Override
+	public String getInfoDetails() {		 
+		return vName;
+	}
+
+}
