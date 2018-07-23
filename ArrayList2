@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class PracticeArrayList {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        Person person = new Person();
+        System.out.println("Please enter person one Info: ");
+        System.out.print("Name: ");
+        person.name = sc.nextLine();
+        System.out.print("Mobile: ");
+        person.mobile = sc.nextLine();
+        System.out.print("Email: ");
+        person.email = sc.nextLine();
+        
+        Person person1 = new Person();
+        System.out.println("Please enter person two Info: ");
+        System.out.print("Name: ");
+        person1.name = sc.nextLine();
+        System.out.print("Mobile: ");
+        person1.mobile = sc.nextLine();
+        System.out.print("Email: ");
+        person1.email = sc.nextLine();
+        
+        ArrayList<Person> persons = new ArrayList();
+        persons.add(person);
+        persons.add(person1);
+        
+        for (int i = 0; i < persons.size(); i++) {
+            System.out.println("Name: " + persons.get(i).name + " Mobile: " + 
+                    persons.get(i).mobile + " Email: " + persons.get(i).email);
+            
+        }
+        
+        //for (Person psn : persons) {
+           // System.out.println("Name: " + psn.name + " Mobile: " + psn.mobile + " Email: " + psn.email);
+       // }
+    }
+    
+}
+
+
+public class Person {
+    public String name;
+    public String mobile;
+    public String email;
+}
