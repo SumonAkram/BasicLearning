@@ -1,0 +1,76 @@
+Slots#01
+public class mainClass {
+    public static void main(String[] args) {
+        Hospital hospital= new Hospital("LabAid", "Dhanmondi");
+         
+     Patient patient = new Patient("Akram","1",hospital);
+    System.out.println(patient.getHospital().getHospitalName()+" "+patient.getPatientName()+" "+patient.getHospital().getLocation());
+    }
+
+}
+
+slots#02
+
+public class Patient {
+    private String patientName;
+    private String patientID;
+    
+    private Hospital hospital;
+    
+    public Patient(String patientName, String patientID, Hospital hospital) {
+        super();
+        this.patientName = patientName;
+        this.patientID = patientID;
+        this.hospital = hospital;
+    }
+    public Hospital getHospital() {
+        return hospital;
+    }
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+    public String getPatientName() {
+        return patientName;
+    }
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+    public String getPatientID() {
+        return patientID;
+    }
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+    public Patient(String patientName, String patientID) {
+        super();
+        this.patientName = patientName;
+        this.patientID = patientID;
+    }
+
+}
+slots#03
+
+public class Hospital {
+    private String hospitalName;
+    private String location;
+    
+    
+    
+    public String getHospitalName() {
+        return hospitalName;
+    }
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
+    }
+    public String getLocation() {
+        return location;
+    }
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    public Hospital(String hospitalName, String location) {
+        super();
+        this.hospitalName = hospitalName;
+        this.location = location;
+    }
+ 
